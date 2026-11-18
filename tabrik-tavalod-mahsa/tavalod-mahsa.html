@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>برای عزیزترینم 💗</title>
+<meta name="description" content="شمارش معکوس تا تولد مهسا">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-size='26' text-anchor='middle'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#fff0f5;
+    --bg2:#ffd6e8;
+    --bg3:#ffb0d6;
+    --bg4:#ff8fc7;
+    --accent:#ff3d90;
+    --accent-dark:#c2185b;
+    --accent-deep:#7a1245;
+    --gold:#ffd76a;
+    --glass:rgba(255,255,255,0.5);
+    --glass-strong:rgba(255,255,255,0.72);
+    --text-dark:#5c1035;
+    --shadow-pink: 0 10px 40px rgba(255,61,144,0.35);
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    font-family:'Vazirmatn','IRANSans','Tahoma',sans-serif;
+    color:var(--text-dark);
+    cursor:default;
+  }
+
+  body{
+    min-height:100vh;
+    background:linear-gradient(-45deg,var(--bg1),var(--bg2),var(--bg4),var(--bg3));
+    background-size:400% 400%;
+    animation:gradientFlow 16s ease infinite;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  @keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  canvas#bgCanvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
+  }
+
+  .sparkle{
+    position:fixed;
+    pointer-events:none;
+    z-index:5;
+    font-size:14px;
+    animation:sparkleFade 900ms ease-out forwards;
+  }
+  @keyframes sparkleFade{
+    0%{ transform:translate(0,0) scale(0.4) rotate(0deg); opacity:1; }
+    100%{ transform:translate(var(--dx,0px),-40px) scale(1.1) rotate(90deg); opacity:0; }
+  }
+
+  .wrap{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:760px;
+    margin:32px auto;
+    padding:0 18px;
+    text-align:center;
+  }
+
+  .top-heart{
+    font-size:2.6rem;
+    animation:heartbeat 1.6s ease-in-out infinite;
+    filter:drop-shadow(0 4px 14px rgba(255,61,144,0.55));
+    display:inline-block;
+  }
+  @keyframes heartbeat{
+    0%,100%{ transform:scale(1); }
+    15%{ transform:scale(1.18); }
+    30%{ transform:scale(0.98); }
+    45%{ transform:scale(1.12); }
+    60%{ transform:scale(1); }
+  }
+
+  .eyebrow{
+    margin:10px 0 4px;
+    letter-spacing:1px;
+    font-weight:500;
+    font-size:clamp(0.85rem,2.2vw,1.05rem);
+    color:var(--accent-dark);
+    opacity:0.9;
+  }
+
+  h1.title{
+    margin:6px 0 18px;
+    font-weight:900;
+    font-size:clamp(1.9rem,6vw,3.4rem);
+    line-height:1.25;
+    background:linear-gradient(90deg,var(--accent-deep),var(--accent),var(--gold),var(--accent));
+    background-size:300% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:titleShine 6s linear infinite;
+  }
+  @keyframes titleShine{
+    to{ background-position:300% center; }
+  }
+
+  .card{
+    background:var(--glass);
+    backdrop-filter:blur(18px) saturate(160%);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);
+    border:1px solid rgba(255,255,255,0.65);
+    border-radius:28px;
+    padding:clamp(20px,4vw,42px) clamp(16px,4vw,36px);
+    box-shadow:var(--shadow-pink), inset 0 0 0 1px rgba(255,255,255,0.4);
+    position:relative;
+    overflow:hidden;
+    animation:glowPulse 4.5s ease-in-out infinite;
+  }
+  @keyframes glowPulse{
+    0%,100%{ box-shadow:0 10px 40px rgba(255,61,144,0.28), inset 0 0 0 1px rgba(255,255,255,0.4); }
+    50%{ box-shadow:0 14px 55px rgba(255,61,144,0.5), inset 0 0 0 1px rgba(255,255,255,0.55); }
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:conic-gradient(from 0deg, transparent, rgba(255,255,255,0.55), transparent 30%);
+    animation:sheen 6s linear infinite;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  @keyframes sheen{ to{ transform:rotate(360deg); } }
+
+  .countdown{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    gap:clamp(8px,2.4vw,20px);
+    flex-wrap:wrap;
+    margin:6px 0 10px;
+  }
+
+  .unit{
+    background:var(--glass-strong);
+    border-radius:18px;
+    padding:clamp(10px,2.4vw,20px) clamp(10px,2.6vw,22px);
+    min-width:clamp(66px,18vw,110px);
+    box-shadow:0 6px 18px rgba(122,18,69,0.15), inset 0 0 0 1px rgba(255,255,255,0.7);
+    position:relative;
+  }
+
+  .unit .num{
+    font-weight:800;
+    font-size:clamp(1.8rem,6vw,3.1rem);
+    color:var(--accent-deep);
+    display:block;
+    line-height:1;
+    transition:transform .25s ease;
+  }
+  .unit .num.tick{
+    animation:tickPop .45s ease;
+  }
+  @keyframes tickPop{
+    0%{ transform:scale(1); }
+    35%{ transform:scale(1.28); color:var(--accent); }
+    100%{ transform:scale(1); }
+  }
+
+  .unit .lbl{
+    display:block;
+    margin-top:6px;
+    font-size:clamp(0.7rem,2vw,0.92rem);
+    font-weight:500;
+    color:var(--accent-dark);
+    opacity:0.85;
+  }
+
+  .sep{
+    align-self:center;
+    font-weight:800;
+    font-size:clamp(1.4rem,4vw,2.2rem);
+    color:var(--accent);
+    opacity:0.6;
+    margin-top:-6px;
+  }
+
+  .subline{
+    margin-top:18px;
+    font-size:clamp(0.85rem,2.4vw,1.05rem);
+    color:var(--accent-deep);
+    opacity:0.85;
+    line-height:2;
+  }
+
+  .subline b{ color:var(--accent-dark); }
+
+  .stats{
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:clamp(0.72rem,2vw,0.86rem);
+    color:var(--accent-dark);
+    opacity:0.8;
+  }
+  .stats span{
+    background:rgba(255,255,255,0.45);
+    padding:6px 14px;
+    border-radius:999px;
+  }
+
+  .footer-note{
+    margin:26px auto 6px;
+    font-size:clamp(0.8rem,2.2vw,0.95rem);
+    color:var(--accent-deep);
+    opacity:0.75;
+  }
+
+  .rotating-msg{
+    margin-top:8px;
+    min-height:1.6em;
+    font-size:clamp(0.85rem,2.3vw,1.05rem);
+    font-weight:500;
+    color:var(--accent-dark);
+  }
+
+  /* ================= CELEBRATION ================= */
+  #celebration{
+    position:fixed;
+    inset:0;
+    z-index:50;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    padding:24px;
+    background:radial-gradient(circle at 50% 30%, rgba(255,255,255,0.35), rgba(255,150,200,0.55) 60%, rgba(200,30,110,0.65));
+    backdrop-filter:blur(2px);
+  }
+  #celebration.active{ display:flex; }
+
+  canvas#confettiCanvas{
+    position:fixed;
+    inset:0;
+    z-index:51;
+    pointer-events:none;
+  }
+
+  .balloon{
+    position:fixed;
+    bottom:-140px;
+    z-index:49;
+    font-size:3.4rem;
+    animation:riseUp linear infinite;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+  }
+  @keyframes riseUp{
+    0%{ transform:translateY(0) translateX(0) rotate(0deg); opacity:0.95; }
+    50%{ transform:translateY(-55vh) translateX(20px) rotate(6deg); }
+    100%{ transform:translateY(-115vh) translateX(-15px) rotate(-6deg); opacity:0.9; }
+  }
+
+  .celeb-heart{
+    font-size:clamp(3rem,10vw,5.5rem);
+    animation:popIn .7s cubic-bezier(.2,1.4,.4,1) both, heartbeat 1.4s ease-in-out infinite 0.7s;
+    filter:drop-shadow(0 8px 24px rgba(255,255,255,0.6));
+  }
+  @keyframes popIn{
+    0%{ transform:scale(0) rotate(-25deg); opacity:0; }
+    70%{ transform:scale(1.15) rotate(6deg); opacity:1; }
+    100%{ transform:scale(1) rotate(0deg); }
+  }
+
+  .celeb-title{
+    margin:14px 0 8px;
+    font-weight:900;
+    font-size:clamp(1.8rem,7vw,3.6rem);
+    color:#fff;
+    text-shadow:0 4px 24px rgba(122,18,69,0.55), 0 0 40px rgba(255,255,255,0.4);
+    animation:popIn .8s .1s cubic-bezier(.2,1.4,.4,1) both;
+  }
+
+  .celeb-sub{
+    color:#fff0f6;
+    font-size:clamp(1rem,3vw,1.4rem);
+    font-weight:600;
+    text-shadow:0 2px 10px rgba(122,18,69,0.5);
+    animation:popIn .8s .2s cubic-bezier(.2,1.4,.4,1) both;
+  }
+
+  .celeb-quote{
+    margin-top:22px;
+    max-width:560px;
+    min-height:3em;
+    color:#fff;
+    font-size:clamp(0.95rem,2.6vw,1.2rem);
+    font-weight:500;
+    background:rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:20px;
+    padding:16px 22px;
+    backdrop-filter:blur(6px);
+  }
+
+  .from-line{
+    margin-top:26px;
+    color:#fff;
+    opacity:0.9;
+    font-size:clamp(0.85rem,2.2vw,1rem);
+  }
+
+  @media (max-width:420px){
+    .sep{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="wrap" id="mainWrap">
+  <div class="top-heart">💗</div>
+  <div class="eyebrow">برای عزیزترینم</div>
+  <h1 class="title">دارم لحظه‌شماری می‌کنم تا تولدت</h1>
+
+  <div class="card">
+    <div class="countdown" dir="ltr">
+      <div class="unit"><span class="num" id="dDays">۰۰</span><span class="lbl">روز</span></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="dHours">۰۰</span><span class="lbl">ساعت</span></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="dMinutes">۰۰</span><span class="lbl">دقیقه</span></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="dSeconds">۰۰</span><span class="lbl">ثانیه</span></div>
+    </div>
+
+    <div class="subline">
+      ۵ شهریور ۱۳۶۳، ساعت <b>۸ صبح</b>، دنیا صاحب یکی از قشنگ‌ترین آدم‌های زندگیم شد<br>
+      امسال <b><span id="turningAge">--</span> ساله</b> می‌شی، و من از همین حالا برات جشن گرفتم 🎂
+    </div>
+
+    <div class="rotating-msg" id="rotatingMsg"></div>
+
+    <div class="stats">
+      <span>✨ <span id="daysAlive">--</span> روزه که مهسا این دنیا رو قشنگ‌تر کرده</span>
+    </div>
+  </div>
+
+  <div class="footer-note">ساخته شده با عشق برای مهسا توسط محسن</div>
+</div>
+
+<div id="celebration">
+  <div class="celeb-heart">🎉💗🎂</div>
+  <div class="celeb-title">تولدت مبارک عزیزترینم!</div>
+  <div class="celeb-sub">امروز میشی <span id="celebAge">--</span> ساله، به همین قشنگی که خودتی 🌸</div>
+  <div class="celeb-quote" id="celebQuote"></div>
+  <div class="from-line">با تموم وجودم دوستت دارم، مهسا — محسن 💗</div>
+</div>
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+/* ===================== تقویم: تبدیل جلالی <-> میلادی (الگوریتم استاندارد) ===================== */
+function div(a,b){ return Math.floor(a/b); }
+
+function gregorianToJalali(gy,gm,gd){
+  const g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];
+  const gy2=(gm>2)?(gy+1):gy;
+  let days=355666+(365*gy)+div(gy2+3,4)-div(gy2+99,100)+div(gy2+399,400)+gd+g_d_m[gm-1];
+  let jy=-1595+(33*div(days,12053));
+  days%=12053;
+  jy+=4*div(days,1461);
+  days%=1461;
+  let jm,jd;
+  if(days>365){
+    jy+=div(days-1,365);
+    days=(days-1)%365;
+  }
+  if(days<186){
+    jm=1+div(days,31);
+    jd=1+(days%31);
+  }else{
+    jm=7+div(days-186,30);
+    jd=1+((days-186)%30);
+  }
+  return [jy,jm,jd];
+}
+
+function jalaliToGregorian(jy,jm,jd){
+  jy+=1595;
+  let days=-355668+(365*jy)+(div(jy,33)*8)+div(((jy%33)+3),4)+jd+((jm<7)?(jm-1)*31:((jm-7)*30)+186);
+  let gy=400*div(days,146097);
+  days%=146097;
+  if(days>36524){
+    days--;
+    gy+=100*div(days,36524);
+    days%=36524;
+    if(days>=365) days++;
+  }
+  gy+=4*div(days,1461);
+  days%=1461;
+  if(days>365){
+    gy+=div(days-1,365);
+    days=(days-1)%365;
+  }
+  let gd=days+1;
+  const sal_a=[0,31,((gy%4===0&&gy%100!==0)||(gy%400===0))?29:28,31,30,31,30,31,31,30,31,30,31];
+  let gm;
+  for(gm=1;gm<=12;gm++){
+    if(gd<=sal_a[gm]) break;
+    gd-=sal_a[gm];
+  }
+  return [gy,gm,gd];
+}
+
+function jalaliToDate(jy,jm,jd,hh=0,mi=0,ss=0){
+  const [gy,gm,gd]=jalaliToGregorian(jy,jm,jd);
+  return new Date(gy,gm-1,gd,hh,mi,ss,0);
+}
+
+/* ===================== اطلاعات تولد ===================== */
+const BIRTH_JYEAR=1363, BIRTH_MONTH=6, BIRTH_DAY=5, BIRTH_HOUR=8;
+const BIRTH_DATE=jalaliToDate(BIRTH_JYEAR,BIRTH_MONTH,BIRTH_DAY,BIRTH_HOUR,0,0);
+
+function faDigits(n){
+  const fa=['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+  return String(n).replace(/\d/g,d=>fa[d]);
+}
+function pad2(n){ return n<10?'0'+n:''+n; }
+
+function computeState(){
+  const now=new Date();
+  const [jy]=gregorianToJalali(now.getFullYear(),now.getMonth()+1,now.getDate());
+  const candidate=jalaliToDate(jy,BIRTH_MONTH,BIRTH_DAY,BIRTH_HOUR,0,0);
+  const diff=now-candidate;
+  const DAY=24*3600*1000;
+  if(diff<0){
+    return {state:'counting', target:candidate, turning:jy-BIRTH_JYEAR, now};
+  }else if(diff<DAY){
+    return {state:'celebrating', turning:jy-BIRTH_JYEAR, now};
+  }else{
+    const nextCandidate=jalaliToDate(jy+1,BIRTH_MONTH,BIRTH_DAY,BIRTH_HOUR,0,0);
+    return {state:'counting', target:nextCandidate, turning:(jy+1)-BIRTH_JYEAR, now};
+  }
+}
+
+/* ===================== پیام‌های چرخشی ===================== */
+const messages=[
+  "هر بار بهت فکر می‌کنم، یه لبخند میاد رو لبم",
+  "با اینکه این‌همه راه بینمونه، دلم همیشه همون‌جا کنارته",
+  "با تو بودن، حتی از پشت گوشی هم قشنگ‌ترین اتفاق زندگیمه",
+  "هنوزم وقتی صدات رو می‌شنوم دلم می‌لرزه",
+  "کاش می‌تونستم همین الان بغلت کنم، ولی تا اون روز، دلم که همیشه تو بغلته 🤍"
+];
+let msgIndex=0;
+const rotatingMsgEl=document.getElementById('rotatingMsg');
+function rotateMessage(){
+  rotatingMsgEl.style.opacity=0;
+  setTimeout(()=>{
+    rotatingMsgEl.textContent=messages[msgIndex%messages.length];
+    msgIndex++;
+    rotatingMsgEl.style.transition='opacity .6s ease';
+    rotatingMsgEl.style.opacity=1;
+  },350);
+}
+rotateMessage();
+setInterval(rotateMessage,4200);
+
+const celebQuotes=[
+  "تولدت مبارک عزیزترینم، امیدوارم همیشه همینقدر بخندی 💗",
+  "هر سالی که کنارتم، برام یه هدیه‌ست",
+  "امروز روز توئه، بذار همه بدونن چقدر می‌درخشی ✨",
+  "دوستت دارم، امروز از هر روزی بیشتر"
+];
+let cq=0;
+const celebQuoteEl=document.getElementById('celebQuote');
+function rotateCelebQuote(){
+  celebQuoteEl.style.transition='opacity .5s ease';
+  celebQuoteEl.style.opacity=0;
+  setTimeout(()=>{
+    celebQuoteEl.textContent=celebQuotes[cq%celebQuotes.length];
+    cq++;
+    celebQuoteEl.style.opacity=1;
+  },300);
+}
+
+/* ===================== به‌روزرسانی شمارش معکوس ===================== */
+const els={
+  days:document.getElementById('dDays'),
+  hours:document.getElementById('dHours'),
+  minutes:document.getElementById('dMinutes'),
+  seconds:document.getElementById('dSeconds'),
+  turning:document.getElementById('turningAge'),
+  celebAge:document.getElementById('celebAge'),
+  daysAlive:document.getElementById('daysAlive')
+};
+let prevVals={days:null,hours:null,minutes:null,seconds:null};
+let celebrationStarted=false;
+let celebQuoteTimer=null;
+const celebrationDiv=document.getElementById('celebration');
+const mainWrap=document.getElementById('mainWrap');
+
+function setUnit(el,key,value){
+  const text=faDigits(pad2(value));
+  if(prevVals[key]!==value){
+    el.textContent=text;
+    el.classList.remove('tick');
+    void el.offsetWidth;
+    el.classList.add('tick');
+    prevVals[key]=value;
+  }
+}
+
+function startCelebration(turning){
+  if(celebrationStarted) return;
+  celebrationStarted=true;
+  mainWrap.style.display='none';
+  celebrationDiv.classList.add('active');
+  els.celebAge.textContent=faDigits(turning);
+  rotateCelebQuote();
+  celebQuoteTimer=setInterval(rotateCelebQuote,3800);
+  spawnBalloons();
+  confettiActive=true;
+}
+
+function stopCelebration(){
+  celebrationStarted=false;
+  mainWrap.style.display='';
+  celebrationDiv.classList.remove('active');
+  if(celebQuoteTimer){ clearInterval(celebQuoteTimer); celebQuoteTimer=null; }
+  confettiActive=false;
+  document.querySelectorAll('.balloon').forEach(b=>b.remove());
+}
+
+function tick(){
+  const st=computeState();
+
+  // آمار روزهای زندگی (همیشه فعال)
+  const aliveDays=Math.floor((st.now-BIRTH_DATE)/(24*3600*1000));
+  els.daysAlive.textContent=faDigits(aliveDays.toLocaleString('en-US'));
+
+  if(st.state==='celebrating'){
+    startCelebration(st.turning);
+    return;
+  }
+
+  if(celebrationStarted) stopCelebration();
+
+  els.turning.textContent=faDigits(st.turning);
+
+  const diff=st.target-st.now;
+  const totalSeconds=Math.max(0,Math.floor(diff/1000));
+  const days=Math.floor(totalSeconds/86400);
+  const hours=Math.floor((totalSeconds%86400)/3600);
+  const minutes=Math.floor((totalSeconds%3600)/60);
+  const seconds=totalSeconds%60;
+
+  setUnit(els.days,'days',days);
+  setUnit(els.hours,'hours',hours);
+  setUnit(els.minutes,'minutes',minutes);
+  setUnit(els.seconds,'seconds',seconds);
+}
+tick();
+setInterval(tick,1000);
+
+/* ===================== بادکنک‌های جشن ===================== */
+const balloonEmojis=['🎈','💗','🎀','🎉'];
+function spawnBalloons(){
+  const count=14;
+  for(let i=0;i<count;i++){
+    setTimeout(()=>{
+      if(!celebrationStarted) return;
+      const b=document.createElement('div');
+      b.className='balloon';
+      b.textContent=balloonEmojis[Math.floor(Math.random()*balloonEmojis.length)];
+      b.style.left=(Math.random()*94)+'vw';
+      b.style.animationDuration=(6+Math.random()*5)+'s';
+      b.style.fontSize=(2.2+Math.random()*2.2)+'rem';
+      celebrationDiv.appendChild(b);
+      setTimeout(()=>b.remove(),12000);
+    },i*350);
+  }
+  if(celebrationStarted){
+    setTimeout(spawnBalloons,5200);
+  }
+}
+
+/* ===================== افکت قلب‌های شناور پس‌زمینه ===================== */
+const bgCanvas=document.getElementById('bgCanvas');
+const bgCtx=bgCanvas.getContext('2d');
+let W,H;
+function resizeBg(){
+  W=bgCanvas.width=window.innerWidth;
+  H=bgCanvas.height=window.innerHeight;
+}
+resizeBg();
+window.addEventListener('resize',resizeBg);
+
+const bgColors=['#ff8fc7','#ff5fa8','#ffd76a','#ffffff','#ff3d90'];
+function makeHeart(){
+  return {
+    x:Math.random()*W,
+    y:H+Math.random()*100,
+    size:8+Math.random()*18,
+    speed:0.4+Math.random()*1.1,
+    drift:(Math.random()-0.5)*0.6,
+    angle:Math.random()*Math.PI*2,
+    spin:(Math.random()-0.5)*0.02,
+    color:bgColors[Math.floor(Math.random()*bgColors.length)],
+    alpha:0.25+Math.random()*0.45
+  };
+}
+const hearts=Array.from({length:26},makeHeart);
+
+function drawHeart(ctx,x,y,size,color,alpha,angle){
+  ctx.save();
+  ctx.translate(x,y);
+  ctx.rotate(angle);
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle=color;
+  ctx.beginPath();
+  const s=size/16;
+  ctx.moveTo(0,4*s);
+  ctx.bezierCurveTo(0,2*s,-6*s,-6*s,-12*s,0);
+  ctx.bezierCurveTo(-16*s,6*s,-4*s,12*s,0,18*s);
+  ctx.bezierCurveTo(4*s,12*s,16*s,6*s,12*s,0);
+  ctx.bezierCurveTo(6*s,-6*s,0,2*s,0,4*s);
+  ctx.fill();
+  ctx.restore();
+}
+
+function animateBg(){
+  bgCtx.clearRect(0,0,W,H);
+  for(const h of hearts){
+    h.y-=h.speed;
+    h.x+=h.drift;
+    h.angle+=h.spin;
+    if(h.y<-30){
+      Object.assign(h,makeHeart(),{y:H+20});
+    }
+    drawHeart(bgCtx,h.x,h.y,h.size,h.color,h.alpha,h.angle);
+  }
+  requestAnimationFrame(animateBg);
+}
+animateBg();
+
+/* ===================== کانفتی زمان جشن ===================== */
+const confettiCanvas=document.getElementById('confettiCanvas');
+const cCtx=confettiCanvas.getContext('2d');
+let CW,CH;
+function resizeConfetti(){
+  CW=confettiCanvas.width=window.innerWidth;
+  CH=confettiCanvas.height=window.innerHeight;
+}
+resizeConfetti();
+window.addEventListener('resize',resizeConfetti);
+
+let confettiActive=false;
+const confettiColors=['#ff3d90','#ffd76a','#ffffff','#ff8fc7','#c2185b'];
+let confettiPieces=[];
+function makeConfetti(){
+  return {
+    x:Math.random()*CW,
+    y:-20-Math.random()*CH*0.5,
+    w:6+Math.random()*6,
+    h:10+Math.random()*8,
+    speedY:2+Math.random()*3,
+    speedX:(Math.random()-0.5)*2,
+    rot:Math.random()*Math.PI,
+    rotSpeed:(Math.random()-0.5)*0.2,
+    color:confettiColors[Math.floor(Math.random()*confettiColors.length)]
+  };
+}
+
+let fireworks=[];
+function spawnFirework(){
+  const fx=CW*0.15+Math.random()*CW*0.7;
+  const fy=CH*0.15+Math.random()*CH*0.4;
+  const color=confettiColors[Math.floor(Math.random()*confettiColors.length)];
+  for(let i=0;i<36;i++){
+    const angle=(Math.PI*2*i)/36;
+    const speed=2+Math.random()*3;
+    fireworks.push({
+      x:fx,y:fy,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      alpha:1,
+      color
+    });
+  }
+}
+let fireworkTimer=0;
+
+function animateConfetti(){
+  cCtx.clearRect(0,0,CW,CH);
+  if(confettiActive){
+    if(confettiPieces.length<140){
+      for(let i=0;i<3;i++) confettiPieces.push(makeConfetti());
+    }
+    confettiPieces.forEach(p=>{
+      p.y+=p.speedY;
+      p.x+=p.speedX;
+      p.rot+=p.rotSpeed;
+      if(p.y>CH+20){
+        Object.assign(p,makeConfetti(),{y:-20});
+      }
+      cCtx.save();
+      cCtx.translate(p.x,p.y);
+      cCtx.rotate(p.rot);
+      cCtx.fillStyle=p.color;
+      cCtx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      cCtx.restore();
+    });
+
+    fireworkTimer++;
+    if(fireworkTimer>70){
+      fireworkTimer=0;
+      spawnFirework();
+    }
+    fireworks.forEach(f=>{
+      f.x+=f.vx;
+      f.y+=f.vy;
+      f.vy+=0.03;
+      f.alpha-=0.012;
+    });
+    fireworks=fireworks.filter(f=>f.alpha>0);
+    fireworks.forEach(f=>{
+      cCtx.save();
+      cCtx.globalAlpha=Math.max(f.alpha,0);
+      cCtx.fillStyle=f.color;
+      cCtx.beginPath();
+      cCtx.arc(f.x,f.y,2.6,0,Math.PI*2);
+      cCtx.fill();
+      cCtx.restore();
+    });
+  }else if(confettiPieces.length){
+    confettiPieces=[];
+    fireworks=[];
+  }
+  requestAnimationFrame(animateConfetti);
+}
+animateConfetti();
+
+/* ===================== افکت درخشش با حرکت موس ===================== */
+let lastSparkle=0;
+window.addEventListener('mousemove',(e)=>{
+  const t=Date.now();
+  if(t-lastSparkle<60) return;
+  lastSparkle=t;
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.textContent=Math.random()>0.5?'✨':'💗';
+  s.style.left=e.clientX+'px';
+  s.style.top=e.clientY+'px';
+  s.style.setProperty('--dx',((Math.random()-0.5)*40)+'px');
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),900);
+});
+</script>
+</body>
+</html>
