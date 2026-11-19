@@ -1,3 +1,30 @@
+<!-- gen:header -->
+<p align="center"><img src=".github/cover.svg" alt="Celebration Page" width="100%"></p>
+
+<h1 align="center">Celebration Page</h1>
+<p align="center"><b>صفحه‌ی تبریک تولد تعاملی و قالب فروشگاه اسباب‌بازی</b><br><i>Interactive birthday greeting page + toy-store landing concept</i></p>
+<p align="center"><img alt="HTML" src="https://img.shields.io/badge/-HTML-f472b6?style=for-the-badge"> <img alt="CSS" src="https://img.shields.io/badge/-CSS-f472b6?style=for-the-badge"> <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-f472b6?style=for-the-badge"></p>
+
+<div dir="rtl">
+
+## ✨ امکانات
+
+- صفحه‌ی تک‌فایلی و سبک
+- انیمیشن و تعامل
+
+</div>
+
+## 🚀 Quick start
+
+```bash
+Open tabrik-tavalod-mahsa/tavalod-mahsa.html in a browser.
+```
+
+---
+
+<!-- gen:docs -->
+## 📚 مستندات کامل · Full documentation
+
 # فروشگاه اینترنتی اسباب‌بازی «لی‌لی‌پوپ»
 
 یک وب‌سایت تک‌صفحه‌ای (Single Page) کاملاً استاتیک، ساخته‌شده با **React + TypeScript + Vite**، بدون هیچ نیاز به بک‌اند، دیتابیس یا سرور Node.js. خروجی نهایی فقط شامل فایل‌های HTML، CSS، JS و تصاویر است و مستقیماً روی هاستینگ اشتراکی (cPanel) قابل آپلود است.
@@ -194,3 +221,8 @@ npm run build
 - بدون هیچ وابستگی بک‌اندی؛ ۱۰۰٪ استاتیک
 
 موفق باشید! 🧸
+
+---
+
+<p align="center">ساخته‌شده توسط <a href="https://mahsen81.ir"><b>محسن جباره‌اصل</b></a> — برنامه‌نویسی، طراحی سایت، ربات و هوش مصنوعی<br>
+Built by <a href="https://mahsen81.ir">Mohsen Jabbareh-Asl</a> · ⭐ اگر مفید بود، ستاره بدهید · Need a custom version? <a href="https://mahsen81.ir">Get in touch</a></p>
